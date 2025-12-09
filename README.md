@@ -117,46 +117,6 @@ This is a test file
 ```http
 GET /files/nonexistent.txt HTTP/1.1
 Host: localhost:4221
-
-HTTP/1.1 404 Not Found
+TP/1.1 404 Not Found
 Connection: keep-alive
-```
-
-## Building and Running
-
-### Prerequisites
-
-- .NET SDK (Version 9.0 or compatible, as specified in `codecrafters-http-server.csproj` and `codecrafters.yml`)
-
-### Building
-
-To build the project, navigate to the repository root and run:
-```bash
-dotnet build --configuration Release --output /tmp/codecrafters-build-http-server-csharp codecrafters-http-server.csproj
-```
-This command compiles the server and places the output in the `/tmp/codecrafters-build-http-server-csharp` directory (the exact output path might vary slightly based on your OS and .NET setup).
-
-### Running
-
-The server can be run using the provided shell script `your_program.sh`, which handles the build process and then executes the server:
-```bash
-./your_program.sh
-```
-
-Alternatively, you can run the compiled executable directly after building:
-```bash
-/tmp/codecrafters-build-http-server-csharp/codecrafters-http-server
-```
-
-By default, the server listens on port 4221.
-
-**Serving files from a directory:**
-
-To enable file serving capabilities (for the `/files/` endpoint), start the server with the `--directory` argument, specifying the path to the directory from which files should be served:
-```bash
-./your_program.sh --directory /path/to/your/files
-```
-Or, if running the executable directly:
-```bash
-/tmp/codecrafters-build-http-server-csharp/codecrafters-http-server --directory /path/to/your/files
 ```
